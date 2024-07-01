@@ -94,7 +94,8 @@ module.exports = {
                 "developer-guide/trace-tracking-func",
                 "developer-guide/log-func",
                 "developer-guide/third-party-copyright",
-                "developer-guide/version-manage"
+                "developer-guide/version-manage",
+                "developer-guide/xds-discovery"
               ],
             },
             {
@@ -196,7 +197,8 @@ module.exports = {
                 "developer-guide/trace-tracking-func",
                 "developer-guide/log-func",
                 "developer-guide/third-party-copyright",
-                "developer-guide/version-manage"
+                "developer-guide/version-manage",
+                "developer-guide/xds-discovery"
               ],
             },
             {

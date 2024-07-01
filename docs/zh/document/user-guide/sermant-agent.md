@@ -1,6 +1,6 @@
 # Sermant Agent使用手册
 
-Sermant Agent是提供字节码增强基础能力及各类服务治理能力的核心组件。[Sermant使用介绍](readme.md)中描述的产品目录`sermant-agent-x.x.x/agent`目录下内容即为Sermant Agent组件的各模块。Sermant Agent的主体为Sermant提供了字节码增强基础能力及开发框架，同时支持心跳功能、动态配置功能、日志功能、事件上报等公共基础能力，当前已支持`premain`和`agentmain`两种方式启动。
+Sermant Agent是提供字节码增强基础能力及各类服务治理能力的核心组件。[Sermant使用介绍](readme.md)中描述的产品目录`sermant-agent-x.x.x/agent`目录下内容即为Sermant Agent组件的各模块。Sermant Agent的主体为Sermant提供了字节码增强基础能力及开发框架，同时支持心跳功能、动态配置功能、日志功能、事件上报、基于xDS的服务发现等公共基础能力，当前已支持`premain`和`agentmain`两种方式启动。
 
 Sermant Agent插件目录中则由各插件提供了标签路由、限流降级、双注册等服务治理能力，当前已支持在宿主服务运行时动态安装和卸载服务治理插件（需要插件支持动态安装和卸载）。
 
