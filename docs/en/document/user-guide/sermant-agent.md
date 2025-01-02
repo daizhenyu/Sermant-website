@@ -46,17 +46,7 @@ If the log outputs as shown above, it indicates that Sermant Agent has started s
 java -jar spring-provider.jar
 ```
 
-- To start by `agentmain`,  you need to use the `Attach API`. First, create a Java file using the [AgentLoader.java](#attachments) and compile it with `javac`:
-
-```shell
-# Linux、MacOS
-javac -cp ./:$JAVA_HOME/lib/tools.jar AgentLoader.java
-
-# Windows has correctly configured the environment variables required for JAVA.
-javac -cp "%JAVA_HOME%\lib\tools.jar" AgentLoader.java -encoding utf-8
-```
-
-- After compilation, an `AgentLoader.class` file will be generated in the directory. Run `AgentLoader` using the following command:
+- To start using the `agentmain` method, the `Attach API` is required. Download the [Sermant Release Package](https://github.com/sermant-io/Sermant/releases/download/v2.2.0/sermant-2.2.0.tar.gz) and extract it. Locate the `AgentLoader` script in the `./tools` directory and run `AgentLoader` using the following command:
 
 
 ```shell

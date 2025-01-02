@@ -46,17 +46,7 @@ java -javaagent:${path}\sermant-agent-x.x.x\agent\sermant-agent.jar -jar spring-
 java -jar spring-provider.jar
 ```
 
-- 通过`agentmain`方式启动，需要借助`Attach API`来完成，首先通过[附件 AgentLoader.java](#附件)创建一个Java文件，通过javac编译：
-
-```shell
-# Linux、MacOS
-javac -cp ./:$JAVA_HOME/lib/tools.jar AgentLoader.java
-
-# Windows 已正确配置JAVA所需环境变量
-javac -cp "%JAVA_HOME%\lib\tools.jar" AgentLoader.java -encoding utf-8
-```
-
-- 编译完成后，将在目录下生成`AgentLoader.class`文件，使用如下指令运行`AgentLoader`
+- 通过`agentmain`方式启动，需要借助`Attach API`来完成，下载[Sermant Release包](https://github.com/sermant-io/Sermant/releases/download/v2.2.0/sermant-2.2.0.tar.gz)并解压，在`./tools`目录下获取`AgentLoader`脚本，使用如下指令运行`AgentLoader`
 
 
 ```shell
@@ -311,16 +301,17 @@ xxxxx.xxxx.TestClassB#testFunctionB(boolean,java.lang.String,java.lang.String,ja
 
 ## Sermant指令说明
 
-Sermant可以通过运行`AgentLoader`并传入下述指令实现Sermant的热插拔能力；同时，Sermant通过任意方式启动成功后，可以通过运行`AgentLoader`并传入指令查询增强信息。具体的指令如下所示：
+Sermant可以通过运行`AgentLoader`并传入下述指令实现Sermant的热插拔能力，还支持动态挂载外部Agent；同时，Sermant通过任意方式启动成功后，可以通过运行`AgentLoader`并传入指令查询增强信息。具体的指令如下所示：
 
-| 指令类型     | 指令示例                                            |
-| ------------ | --------------------------------------------------- |
-| Agent挂载    | 指令为空默认为Agent挂载                             |
-| Agent卸载    | command=UNINSTALL-AGENT                             |
-| 插件安装     | command=INSTALL-PLUGINS:${插件名}                   |
-| 插件卸载     | command=UNINSTALL-PLUGINS:${插件名}                 |
-| 插件重复安装 | command=INSTALL-PLUGINS:${插件名}#${自定义插件编码} |
-| 增强信息查询 | command=CHECK_ENHANCEMENT                           |
+| 指令类型      | 指令示例                                            |
+| ------------- | --------------------------------------------------- |
+| Agent挂载     | 指令为空默认为Agent挂载                             |
+| Agent卸载     | command=UNINSTALL-AGENT                             |
+| 插件安装      | command=INSTALL-PLUGINS:${插件名}                   |
+| 插件卸载      | command=UNINSTALL-PLUGINS:${插件名}                 |
+| 插件重复安装  | command=INSTALL-PLUGINS:${插件名}#${自定义插件编码} |
+| 增强信息查询  | command=CHECK_ENHANCEMENT                           |
+| 挂载外部Agent | command=INSTALL-EXTERNAL-AGENT:${外部Agent名}       |
 
 ## 配置规范
 
